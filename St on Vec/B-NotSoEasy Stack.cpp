@@ -23,9 +23,6 @@ public:
         st.clear();
         cout << "ok" << endl;
     }
-    /*void exit(){
-        cout << "bye";
-    }*/
 };
 signed main(){
     string req;
