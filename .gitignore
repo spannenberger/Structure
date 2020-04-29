@@ -1,0 +1,5 @@
+
+*.exe
+Heap/BST.o
+RSQ/RSQ.o
+*.o
