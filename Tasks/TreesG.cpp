@@ -47,7 +47,7 @@ class BinarySearchTree {
     }
     void parent_alone(Node* &node){
         if(node->left) parent_alone(node->left);
-        if((node->right != 0) || (!node->left)){
+        if((node->right != 0) ^ (node->left!= 0)){
             cout << node->val << endl;
         }
         if(node->right) parent_alone(node->right);
