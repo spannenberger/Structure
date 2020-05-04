@@ -1,4 +1,4 @@
-
+//https://informatics.msk.ru/mod/statements/view3.php?id=599&chapterid=760#1
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -32,6 +32,11 @@ class BinarySearchTree {
             if(node->left) printLeaf(node->left);
             if(node->right) printLeaf(node->right);
         }
+    }
+    void dfs(Node* &node){
+        if(node->left) dfs(node->left);
+        cout << node->val << endl;
+        if(node->right) dfs(node->right);
     }
     void insert(T x, Node* &node) {
         if (!node) {
@@ -67,6 +72,9 @@ public:
     void printLeaf(){
         printLeaf(root);
     }
+    void dfs(){
+        dfs(root);
+    }
     int height() {
         return max_depth;
     }
@@ -83,7 +91,7 @@ void solve() {
     for (int num; cin >> num && num;) {
         bst.insert(num);
     }
-    bst.printLeaf();
+    bst.dfs();
 }
 
 int main() {
@@ -98,4 +106,3 @@ int main() {
     solve();
     return 0;
 }
-

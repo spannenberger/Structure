@@ -1,3 +1,4 @@
+//Solve for task: https://informatics.msk.ru/mod/statements/view3.php?id=599&chapterid=758#1
 #include <bits/stdc++.h>
 
 using namespace std;
