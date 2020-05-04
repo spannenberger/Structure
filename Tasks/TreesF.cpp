@@ -1,9 +1,7 @@
-
+//Solve for this task:https://informatics.msk.ru/mod/statements/view3.php?id=599&chapterid=762#1
 #include <bits/stdc++.h>
 
 using namespace std;
-
-const int INF = 2e9 + 1337;
 
 template<typename T>
 class BinarySearchTree {
@@ -25,19 +23,6 @@ class BinarySearchTree {
         max_depth = max(max_depth, node->depth);
     }
 
-    void printLeaf(Node* &node){
-        if((node->left == nullptr) && (node->right == nullptr)){
-            cout << node->val << endl;
-        }else{
-            if(node->left) printLeaf(node->left);
-            if(node->right) printLeaf(node->right);
-        }
-    }
-    void dfs(Node* &node){
-        if(node->left) dfs(node->left);
-        cout << node->val << endl;
-        if(node->right) dfs(node->right);
-    }
     void print_parent(Node* &node){
         if(node->left) print_parent(node->left);
         if(node->left && node->right){
@@ -45,6 +30,7 @@ class BinarySearchTree {
         }
         if(node->right) print_parent(node->right);
     }
+
     void insert(T x, Node* &node) {
         if (!node) {
             elem_counter++;
@@ -62,6 +48,7 @@ class BinarySearchTree {
             update_depth(node->right);
         }
     }
+
     auto min(Node* node) {
         while (node && node->left) {
             node = node->left;
@@ -76,20 +63,11 @@ public:
     void insert(T x) {
         insert(x, root);
     }
-    void printLeaf(){
-        printLeaf(root);
-    }
-    void dfs(){
-        dfs(root);
-    }
-    void print_parent(){
+    void pr_parent(){
         print_parent(root);
     }
     int height() {
         return max_depth;
-    }
-    int counter(){
-        return elem_counter;
     }
     ~BinarySearchTree() {
         delete root;
@@ -101,7 +79,8 @@ void solve() {
     for (int num; cin >> num && num;) {
         bst.insert(num);
     }
-    bst.print_parent();
+
+    bst.pr_parent();
 }
 
 int main() {
@@ -116,4 +95,3 @@ int main() {
     solve();
     return 0;
 }
-
